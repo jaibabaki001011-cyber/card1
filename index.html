@@ -5,49 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Invitation</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background-color: #333;
-        }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #333; overflow: hidden; }
+        
+        .bg-blur { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('card.jpg'); background-size: cover; background-position: center; filter: blur(15px); transform: scale(1.1); }
+        
+        .card-img { position: relative; max-width: 90%; max-height: 85vh; width: auto; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 10px; z-index: 1; }
 
-        /* पीछे वाला Blur बैकग्राउंड */
-        .bg-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('card.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(15px); /* यहाँ से आप Blur कम या ज्यादा कर सकते हैं */
-            transform: scale(1.1);
+        /* नीचे वाली पट्टी (Footer) */
+        .footer {
+            position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.7); 
+            color: white; text-align: center; padding: 10px 0; z-index: 2;
         }
-
-        /* सामने वाला मुख्य कार्ड */
-        .card-img {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border-radius: 10px;
-            z-index: 1;
-        }
+        .btn-container { display: flex; justify-content: center; gap: 15px; margin-top: 5px; }
+        .btn { padding: 8px 15px; border-radius: 5px; text-decoration: none; color: white; font-size: 14px; font-weight: bold; }
+        .wa { background: #25d366; }
+        .ig { background: #e1306c; }
     </style>
 </head>
 <body>
 
     <div class="bg-blur"></div>
     <img src="card.jpg" class="card-img" alt="Wedding Invitation">
+
+    <div class="footer">
+        <div style="font-size: 12px; margin-bottom: 5px;">आप भी डिजिटल इनविटेशन बनवाना चाहते हैं? हमसे संपर्क करें:</div>
+        <div class="btn-container">
+            <a href="https://wa.me/91XXXXXXXXXX" class="btn wa">WhatsApp</a>
+            <a href="https://www.instagram.com/YOUR_USERNAME" class="btn ig">Instagram</a>
+        </div>
+    </div>
 
 </body>
 </html>
