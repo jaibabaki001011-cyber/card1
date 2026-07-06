@@ -11,13 +11,20 @@
         
         .card-img { position: relative; max-width: 90%; max-height: 85vh; width: auto; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-radius: 10px; z-index: 1; }
 
-        /* नीचे वाली पट्टी (Footer) */
-        .footer {
-            position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.7); 
-            color: white; text-align: center; padding: 10px 0; z-index: 2;
+        /* फ्लोटिंग बबल बटन */
+        .float-btn {
+            position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;
+            background: #d4af37; color: white; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer; z-index: 100; transition: 0.3s;
         }
-        .btn-container { display: flex; justify-content: center; gap: 15px; margin-top: 5px; }
-        .btn { padding: 8px 15px; border-radius: 5px; text-decoration: none; color: white; font-size: 14px; font-weight: bold; }
+        
+        /* मेनू (जो दबने पर खुलेगा) */
+        .menu {
+            position: fixed; bottom: 90px; right: 20px; display: none; flex-direction: column; gap: 10px; z-index: 99;
+        }
+        .menu a { padding: 12px 25px; border-radius: 20px; text-decoration: none; color: white; font-weight: bold; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); text-align: center; }
         .wa { background: #25d366; }
         .ig { background: #e1306c; }
     </style>
@@ -27,12 +34,13 @@
     <div class="bg-blur"></div>
     <img src="card.jpg" class="card-img" alt="Wedding Invitation">
 
-    <div class="footer">
-        <div style="font-size: 12px; margin-bottom: 5px;">आप भी डिजिटल इनविटेशन बनवाना चाहते हैं? हमसे संपर्क करें:</div>
-        <div class="btn-container">
-            <a href="https://wa.me/919079761779" class="btn wa">WhatsApp</a>
-            <a href="https://www.instagram.com/hariomdeg.cre.invitation?igsh=MWdnbmxqcDJ2MHlsOQ==" class="btn ig">Instagram</a>
-        </div>
+    <!-- बबल बटन -->
+    <div class="float-btn" onclick="document.getElementById('menu').style.display = (document.getElementById('menu').style.display === 'flex') ? 'none' : 'flex'">+</div>
+
+    <!-- बटन का मेनू -->
+    <div class="menu" id="menu">
+        <a href="https://wa.me/919079761779" class="wa">WhatsApp</a>
+        <a href="https://www.instagram.com/hariomdeg.cre.invitation?igsh=MWdnbmxqcDJ2MHlsOQ==" class="ig">Instagram</a>
     </div>
 
 </body>
